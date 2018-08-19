@@ -1,0 +1,78 @@
+@import "./../../base.scss";
+
+.add-contacts-button{
+    background-color: $main-color;
+    color: $white-color;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 30px 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    text-align: center;
+    font-size:2.5em;
+    font-weight: bolder;
+    cursor: pointer;
+    span{
+        margin-top: -3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.add-contacts-button:hover{
+    background-color: $default-color;
+    transition: background-color 0.1s ease-in;
+}
+
+.list-contacts {
+    padding: 30px 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .list-contact-item {
+        display: block;
+        .list-contact-item-holder{
+            display: inline-block;
+            padding: 0 7px;
+            .list-contact-item-pic{
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: $main-color;
+                color: $white-color;
+                border-radius: 50%;
+                text-align: center;
+                position: relative;
+                span{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+        .list-contact-item-holder{
+            .list-contact-item-name{
+                display: inline-block;
+                color: $main-color;
+                font-size: 1.3em;
+            }
+            .list-contact-item-contacts{
+                display: inline-block;
+            }
+            .contact-item-email{
+                color: $default-color;
+                font-size: 0.8em;
+            }
+            .contact-item-phone{
+                color: $main-color;
+                font-size: 1em;
+            }
+        }
+    }
+}

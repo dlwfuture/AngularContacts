@@ -1,0 +1,19 @@
+<div class="title-holder">
+    <h3 class="animated fadeInDown">NEW CONTACT</h3>
+</div>
+<form #formContact="ngForm" class="form" (ngSubmit)="onSubmit(formContact)" [ngClass]="{'submitted': FormSubmitted}">
+    <div class="form-inputs">
+        <input [(ngModel)]="Contact.Name" type="text" id="name" name="name" class="form-input" placeholder="Name" maxlength="150" required/>
+        <input [(ngModel)]="Contact.Email" type="email" id="email" name="email" class="form-input" placeholder="E-mail" maxlength="200" email required/>
+        <input [(ngModel)]="Contact.Telephone" type="tel" id="telephone" name="telephone" class="form-input" placeholder="Phone" maxlength="12"/>
+        <input [(ngModel)]="Contact.Mobile" type="tel" id="mobile" name="mobile" class="form-input" placeholder="Mobile Phone" maxlength="12"/>
+        <div *ngIf="Contact.Mobile && Contact.Mobile.length" class="regular-checkbox-holder">
+          <input [(ngModel)]="Contact.IsMobileWhatsApp" id="whatsapp" class="regular-checkbox" name="whatsapp" type="checkbox"/>
+          <label for="whatsapp">The mobile is also Whastapp</label>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Save</button>
+        <a routerLink="/" class="button btn-cancel">Back</a>
+      </div>
+</form>
