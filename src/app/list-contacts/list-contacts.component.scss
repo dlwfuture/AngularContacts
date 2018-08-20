@@ -35,9 +35,14 @@
     flex-wrap: wrap;
     .list-contact-item {
         display: block;
+        margin: 5px 15px;
+        i {
+            width: 15px;
+        }
         .list-contact-item-holder{
             display: inline-block;
             padding: 0 7px;
+            vertical-align: middle;
             .list-contact-item-pic{
                 display: block;
                 width: 50px;

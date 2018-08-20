@@ -1,8 +1,10 @@
 <div class="title-holder">
     <h3 class="animated fadeInDown">CONTACTS</h3>
 </div>
-
-<div class="list-contacts">
+<div class="text-center" *ngIf="!ContactList || !ContactList.length">
+    <span class="no-records">No contacts to display</span>
+</div>
+<div class="list-contacts" *ngIf="ContactList && ContactList.length">
   <div class="list-contact-item animated fadeIn" *ngFor="let item of ContactList">
     <div class="list-contact-item-holder">
         <div class="list-contact-item-pic">
@@ -13,9 +15,18 @@
         <div class="list-contact-item-name">
             {{item.Name}}
         </div>
-        <div *ngFor="let contact of item.Contacts" class="contact-item" [ngClass]="(contact.Type=='email')?'contact-item-email':'contact-item-phone'">
-            {{contact.Value}}
-          </div>
+        <div class="contact-item contact-item-email">
+            {{item.Email}}
+        </div>
+        <div *ngIf="item.Telephone && item.Telephone.length" class="contact-item contact-item-phone">
+            <fa name="phone"></fa> {{item.Telephone}}
+        </div>
+        <div *ngIf="item.Mobile && item.Mobile.length" class="contact-item contact-item-phone">
+            <fa name="mobile"></fa> {{item.Mobile}}
+        </div>
+        <div *ngIf="item.IsMobileWhatsApp" class="contact-item contact-item-phone">
+            <fa name="whatsapp"></fa> {{item.Mobile}}
+        </div>
     </div>
   </div>
 </div>
@@ -23,3 +34,4 @@
 <a routerLink="/add" routerLinkActive="active">
   <div class="add-contacts-button animated fadeInRight"><span>+</span></div>
 </a>
+
