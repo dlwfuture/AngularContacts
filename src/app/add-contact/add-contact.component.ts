@@ -37,7 +37,7 @@ export class AddContactComponent implements OnInit {
     }
     const splittedWords = name.split(' ');
     if (splittedWords.length < 2){
-      return splittedWords[0];
+      return splittedWords[0].charAt(0);
     }
     return `${ splittedWords[0].charAt(0) }${ splittedWords[splittedWords.length - 1].charAt(0) }`;
   }
