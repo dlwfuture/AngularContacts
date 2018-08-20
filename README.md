@@ -11,6 +11,4 @@ Navigate to `http://localhost:4200/`.
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Requirements
-This application also needs NodeJSContactsAPI to be running to work as the backend application
-The address to the backend application (NodeJSContactsAPI) is at "app.config.ts" on API_ENDPOINT
-The default address is 'http://localhost:3001/'
+* This application also needs NodeJSContactsAPI to be running to work as the backend application. The address to the backend application (NodeJSContactsAPI) is at "app.config.ts" on API_ENDPOINT. The default address is 'http://localhost:3001/'
